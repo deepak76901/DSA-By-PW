@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class BinarySearch {
@@ -27,7 +26,7 @@ public class BinarySearch {
 
         int m;
         Scanner sc = new Scanner(System.in);
-        System.out.print("enter the number of elements you want : ");
+        System.out.print("enter the size of Array : ");
         m = sc.nextInt();
 
         int arr[] = new int[m];
@@ -40,13 +39,15 @@ public class BinarySearch {
         }
 
         int target;
-        Scanner sc1 = new Scanner(System.in);
         System.out.print("enter the target: ");
-        target = sc1.nextInt();
+        target = sc.nextInt();
 
-        if (binarySearch(arr, target) == 1)
+        if (binarySearch(arr, target) == 1){
             System.out.println("True");
-        else
+        }else{
             System.out.println("False");
+        }
+
+        
     }
 }

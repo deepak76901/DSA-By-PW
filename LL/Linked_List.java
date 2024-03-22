@@ -16,10 +16,9 @@ class Linked_List {
         Node newNode = new Node(newData);
 
         if (head == null) {
-            head = new Node(newData);
+            head = newNode;
             return;
         }
-        newNode.next = null;
         Node temp = head;
         while (temp.next != null) {
             temp = temp.next;
@@ -28,14 +27,15 @@ class Linked_List {
         return;
     }
 
-    public void insertAtStart(int d) {
-        Node again = new Node(d);
-        again.next = head;
-        head = again;
+    public void insertAtStart(int data) {
+        Node n1 = new Node(data);
+        n1.next = head;
+        head = n1;
     }
 
     // Insertion after any point of Node
-    public void insertAny(Node prevNode, int newData) {
+    public void insertAny(int prevItem,int newData) {
+        Node prevNode = searchValue(prevItem);
         if (prevNode == null) {
             System.out.println("There is no node after previous Node");
             return;
@@ -106,13 +106,12 @@ class Linked_List {
         }
     }
 
-    public void searchValue(int X){
+    public Node searchValue(int value){
         Node temp = head;
         int flag = 0;
         while(temp != null){
-            if(temp.data == X){
-                flag = 1 ;
-                break;
+            if(temp.data == value){
+                return temp;
             }
             temp = temp.next;
         }
@@ -122,12 +121,13 @@ class Linked_List {
         else{
             System.out.println("YES");
         }
+        return temp;
     }
 
     public void displayNode() {
         Node current = head;
         while (current != null) {
-            System.out.println(current.data + " ");
+            System.out.print(current.data + " ");
             current = current.next;
         }
     }
@@ -139,9 +139,11 @@ class Linked_List {
         llist.insertAtEnd(14);
         llist.insertAtEnd(21);
         llist.insertAtEnd(11);
-        llist.insertAtEnd(30);
-        llist.insertAtEnd(10);
-        llist.insertAtEnd(76);
+        // llist.insertAtEnd(30);
+        // llist.insertAtEnd(10);
+        // llist.insertAtEnd(76);
+
+        llist.insertAtStart(66);
         
        
 
@@ -154,8 +156,12 @@ class Linked_List {
         // llist.reverseRec(llist.head, null);
         // llist.displayNode();
         // llist.middleOfLL();
-        llist.insertAny(llist.head.next.next, 45);
-         llist.displayNode();
+
+        // System.out.println("After inserting at specific Node");
+        // llist.insertAny(21, 45);
+        // llist.displayNode();
+
+
         // Node temp=llist.head;
         // while(temp.next != null){
         //     temp = temp.next;
@@ -163,6 +169,6 @@ class Linked_List {
         // temp.next = llist.head;
         // llist.detectLoop();
 
-        // llist.searchValue(20);
+        // llist.searchValue(30);
     }
 }

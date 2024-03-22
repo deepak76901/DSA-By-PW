@@ -2,17 +2,16 @@
 // space complexity: O(1)
 
 import java.util.*;
-import java.io.*;
 
 class LinearSearch {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // size of an element from the user
-        System.out.println("Enter the number of elements present in an array");
+        System.out.println("Enter the size of Array");
         int n = sc.nextInt();
 
         // array elements entered from the user
-        System.out.println("Enter the array elements");
+        System.out.println("Enter the array  elements");
         int[] arr = new int[n];
 
         for(int i=0; i<n; i++){
@@ -38,6 +37,7 @@ class LinearSearch {
         else{
             System.out.println("Searched element is found at the location:" +idx);
         }
+        sc.close();
 
     }
 }
